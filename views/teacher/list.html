@@ -66,10 +66,9 @@
               <td>{{ v.tc_email }}</td>
               <td>{{ v.tc_join_date }}</td>
               <td data-id="{{ v.tc_id }}" data-status="{{ v.tc_status }}" >
-                <a href="javascript:;" class="btn btn-info btn-xs preview" id="chakan">查 看</a>
+                <a href="javascript:;" class="btn btn-info btn-xs preview">查 看</a>
                 <a href="javascript:;" class="btn btn-info btn-xs">编 辑</a>
-                <a href="javascript:;" class="btn btn-warning btn-xs handle" id="zhuxiao">注
-                  销</a>
+                <a href="javascript:;" class="btn btn-xs handle"></a>
 
               </td>
             </tr>
@@ -130,7 +129,7 @@
             <tr>
               <td colspan="7">
                 <div class="introduce">
-                  {{tc_introduce}}
+                  {{@tc_introduce}}
                   </div>
               </td>
             </tr>
