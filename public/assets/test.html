@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
 </head>
 <body>
 <input type="file" id="file_upload_1">
-
-
 <script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
 <script src="uploadify/jquery.uploadify.js"></script>
 <script>
-  $(function() {
+  $(function () {
     $("#file_upload_1").uploadify({
-      height        : 30,
-      swf           : 'uploadify/uploadify.swf',
-      uploader      : 'uploadify/uploadify.php',
-      width         : 120
+      height: 30,
+      swf: 'uploadify/uploadify.swf',
+      uploader: 'uploadify/uploadify.php',
+      width: 120,
+      buttonClass: 'btn btn-success btn-sm',
+      buttonText: '上传图片',
+      onInit:function () {
+        $("#file_upload_1-button").removeAttr('style').css({height: "30px",width: "120px"}).find(".uploadify-button-text").css({
+          lineHeight:'1.5'
+        });
+      }
     });
   });
 </script>

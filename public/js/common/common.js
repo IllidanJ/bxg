@@ -30,7 +30,11 @@ define(['jquery', 'template', 'nprogress','jquery_cookie'], function ($, templat
     var address={
       '/teacher/add':'/teacher/list',
       '/settings':'/',
-      '/repass':'/'
+      '/repass':'/',
+      '/category/add':'/category/list',
+      '/course/step1':'/course/list',
+      '/course/step2':'/course/list',
+      '/course/step3':'/course/list',
     };
     var pathname = address[location.pathname] || location.pathname;
     //侧边栏特效
