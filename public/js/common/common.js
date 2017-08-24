@@ -29,7 +29,8 @@ define(['jquery', 'template', 'nprogress','jquery_cookie'], function ($, templat
     $("#login").html(html);
     var address={
       '/teacher/add':'/teacher/list',
-      '/settings':'/'
+      '/settings':'/',
+      '/repass':'/'
     };
     var pathname = address[location.pathname] || location.pathname;
     //侧边栏特效
