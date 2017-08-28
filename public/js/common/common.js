@@ -1,7 +1,7 @@
 /**
  * Created by 喆辰 on 2017/8/20.
  */
-define(['jquery', 'template', 'nprogress','jquery_cookie'], function ($, template,nprogress) {
+define(['jquery', 'template', 'nprogress','jquery_cookie'], function ($, template,NProgress) {
   if (location.pathname != '/login') {
 
     //如果未登录，跳转到登录页面
@@ -31,10 +31,10 @@ define(['jquery', 'template', 'nprogress','jquery_cookie'], function ($, templat
       '/teacher/add':'/teacher/list',
       '/settings':'/',
       '/repass':'/',
-      '/category/add':'/category/list',
-      '/course/step1':'/course/list',
-      '/course/step2':'/course/list',
-      '/course/step3':'/course/list',
+      '/category/add':'/category/add',
+      '/course/step1':'/course/add',
+      '/course/step2':'/course/add',
+      '/course/step3':'/course/add',
     };
     var pathname = address[location.pathname] || location.pathname;
     //侧边栏特效

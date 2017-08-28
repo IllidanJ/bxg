@@ -5,7 +5,7 @@ require.config({
     jquery_cookie:"assets/jquery-cookie/jquery.cookie",
     jquery_form:"assets/jquery-form/jquery.form",
     jquery_region:'assets/jquery-region/jquery.region',
-    jquery_Jcrop:'assets/Jcrop-master/js/jquery.Jcrop.min',
+    jquery_Jcrop:'assets/Jcrop/js/Jcrop',
     template:"assets/artTemplate/template-web",
     bootstrap:"assets/bootstrap/js/bootstrap.min",
     tools:"js/common/tools",

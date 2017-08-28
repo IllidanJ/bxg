@@ -46,7 +46,7 @@
           {{each result v i}}
           <div class="course">
             <div class="pic">
-              <img src="{{v.cs_cover}}" alt="">
+              <img src="{{v.cs_cover?v.cs_cover:'uploads/course.png'}}" alt="">
             </div>
             <div class="info">
               <a href="/course/step1?cs_id={{v.cs_id}}">{{v.cs_name}}</a>

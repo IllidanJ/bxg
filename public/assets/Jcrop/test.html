@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/Jcrop.min.css">
+
+  <style>
+    .jcrop-thumb {
+      top: 15px;
+      right: -20px;
+      border: 1px black solid;
+    }
+  </style>
+</head>
+<body>
+<img src="1.jpg" alt="">
+<button>anniu</button>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/Jcrop.js"></script>
+<script>
+  var api;
+  var data;
+  $('img').Jcrop({
+    allowSelect: true,
+    aspectRatio: 2 / 1,
+    boxWidth:400,
+    setSelect:[50, 50, 1000, 1000],
+  },function () {
+    api = this;
+    thumbnail = this.initComponent('Thumbnailer', { width: 130, height: 130 });
+
+  });
+  $("button").click(function () {
+    api.newSelection();
+    api.animateTo([50, 50, 1000, 1000]);
+    api.setOptions({
+      //裁切框移动时出发事件
+
+      onChange: function () {
+        data = {
+          x: api.getSelection().x,
+          y: api.getSelection().y,
+          w: api.getSelection().w,
+          h: api.getSelection().h
+        };
+        console.log(data);
+      }
+    })
+  })
+</script>
+</body>
+</html>

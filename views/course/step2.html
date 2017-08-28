@@ -19,13 +19,18 @@
       <script type="text/html" id="picture">
         <ol class="breadcrumb">
           <li><a href="javascript:;">课程管理</a></li>
-          <li class="active">课程添加</li>
+          <li class="active">课程图片</li>
         </ol>
         <div class="steps">
           <!-- 摘要 -->
           <div class="brief">
             <div class="thumb">
+              {{if cs_cover}}
               <img src="{{cs_cover}}" alt="">
+              {{else}}
+              <img src="{{cs_cover_original}}" alt="">
+              {{/if}}
+
             </div>
             <dl class="info">
               <dt>{{cs_name}}</dt>
@@ -36,19 +41,19 @@
           <!-- 步聚 -->
           <ul class="forwards list-unstyled">
             <li>
-              <a href="/course/step1" class="done">
+              <a href="/course/step1?cs_id={{cs_id}}" class="done">
                 <b class="fa fa-check"></b>
                 基本信息
               </a>
             </li>
             <li>
-              <a href="/course/tep2" class="active">
+              <a href="/course/step2?cs_id={{cs_id}}" class="active">
                 <b>2</b>
                 课程图片
               </a>
             </li>
             <li>
-              <a href="/course/step3">
+              <a href="/course/step3?cs_id={{cs_id}}">
                 <b>3</b>
                 课时管理
               </a>
@@ -65,7 +70,7 @@
             <!-- 上传图片 -->
             <div class="picture col-md-offset-2">
               <div class="preview">
-                <img src="{{cs_cover_original}}" alt="">
+                <img src="{{cs_cover_original}}" alt="" id="pic">
               </div>
               <p class="tips">
                 可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。
@@ -74,7 +79,7 @@
                 <a href="javascript:;" class="btn btn-success btn-sm" id="file_upload">选择图片</a>
               </div>
               <div class="col-md-2">
-                <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                <a href="javascript:;" class="btn btn-warning btn-sm" id="jcrop">裁切图片</a>
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@ define(['jquery', 'template', 'tools','ckeditor'], function ($, template, tools)
             type:'get',
             url:'/api/category/child',
             data:{
-              cg_id:info.result.cs_cg_pid
+              cg_id:info.result.cs_cg_id
             },
             success:function (info) {
               if(info.code==200) {
@@ -59,9 +59,13 @@ define(['jquery', 'template', 'tools','ckeditor'], function ($, template, tools)
               cg_id: $(this).val()
             },
             success: function (info) {
+              if(!info) {
+                $('#child').html('<option value="-1">请选择</option>');
+                return false;
+              }
               if (info.code == 200) {
                 //先清空二级菜单
-                $('#child').html('<option value="0">请选择</option>');
+                $('#child').html('<option value="-1">请选择</option>');
                 for (var i = 0; i < info.result.length; i++) {
                   $('#child').append('<option value=' + info.result[i].cg_id + '>' + info.result[i].cg_name + '</option>')
                 }
@@ -85,7 +89,7 @@ define(['jquery', 'template', 'tools','ckeditor'], function ($, template, tools)
         success:function (info) {
           if(info.code==200) {
             alert('保存成功');
-            location.href = '/course/step2';
+            location.href = '/course/step2?cs_id='+cs_id;
           }
         }
       });
