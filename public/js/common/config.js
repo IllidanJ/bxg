@@ -8,7 +8,7 @@ require.config({
     jquery_Jcrop:'assets/Jcrop/js/Jcrop',
     template:"assets/artTemplate/template-web",
     bootstrap:"assets/bootstrap/js/bootstrap.min",
-    tools:"js/common/tools",
+    tools:"dist/js/common/tools.min",
     datepicker:"assets/bootstrap-datepicker/js/bootstrap-datepicker",
     datepicker_cn:"assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
     nprogress:'assets/nprogress/nprogress',
